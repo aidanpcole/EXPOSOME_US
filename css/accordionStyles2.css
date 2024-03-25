@@ -189,7 +189,7 @@ uild a Foldable Table in Vanilla JS*/
   padding: 0.5em 0 1em 0;
   position: relative;
   margin-right: 0;
-  margin-top:0;
+  margin-top:-1px;   /* -1 instead of 0px to get vert button to line up with sidebar */
   transition: 0.5s ease;
 }
 
@@ -198,8 +198,8 @@ uild a Foldable Table in Vanilla JS*/
 .side-bar--closed{
   display: flex;
   flex-direction: row-reverse;
-  width: 340px;
-  height: 290px;
+  width: 420px;
+  height: 410px;
   background-color: transparent;
   border-right: transparent;
   border-bottom: transparent;
@@ -330,8 +330,8 @@ uild a Foldable Table in Vanilla JS*/
   .side-bar--closed{
     display: flex;
     flex-direction: row-reverse;
-    width: 340px;
-    height: 290px;
+    width: 420px;
+    height: 410px;
     background-color: transparent;
     border-right: transparent;
     border-bottom: transparent;
@@ -465,8 +465,8 @@ uild a Foldable Table in Vanilla JS*/
   .side-bar--closed{
     display: flex;
     flex-direction: row-reverse;
-    width: 340px;
-    height: 290px;
+    width: 420px;
+    height: 410px;
     background-color: transparent;
     border-right: transparent;
     border-bottom: transparent;
@@ -601,3 +601,4 @@ uild a Foldable Table in Vanilla JS*/
   }
 
 }
+

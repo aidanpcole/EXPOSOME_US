@@ -4556,8 +4556,8 @@ body {
   z-index: 100;
   display: flex;
   flex-direction: row-reverse;
-  width: 370px;
-  height: 375px;
+  width: 420px;
+  height: 450px;
   background-color: whitesmoke;
   border-right: transparent;
   border-bottom: #ffea4c 0.5rem solid;
@@ -4635,7 +4635,7 @@ input.largerCheck {
 #over_map_side2 {
   position: absolute;
   top: 8%;
-  left: 340px;
+  left: 420px;
   z-index: 101;
   width: 2em;
   transition:
@@ -6548,3 +6548,4 @@ div.g4-survey-data-instruction img {
 	object-fit: cover;
 }
 /* -------- Survey Data Image -------- */
+

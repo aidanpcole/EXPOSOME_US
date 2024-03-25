@@ -22,19 +22,20 @@ const storySlide = {
 
 // <input type="checkbox" id="Resources"><h4>Resources</h4>
 const filterslide = {
-  title: '<h2 class="h2 g4-text-burgundy fw-bold g4-header-underline"> EXPOSURES </h2>',
+  title: '<h1 class="h1 g4-text-burgundy fw-bold g4-header-underline"> EXPOSURES </h1>',
   slide: 'filterSlide',
   content: `<div class="checkies">
-  <h5><input type="checkbox" id="PMTFV" class="largerCheck"> <span style="font-weight:bold;">&nbspFine Particulate Matter (PM<sub>2.5</sub>)</span></h5>
-  <h5><input type="checkbox" id="NOTWO" class="largerCheck"> <span style="font-weight:bold;">&nbspNitrogen Dioxide (NO<sub>2</sub>)</span></h5>
-  <h5><input type="checkbox" id="OZONE" class="largerCheck"> <span style="font-weight:bold;">&nbspOzone (O<sub>3</sub>)</span></h5>
-  <h5><input type="checkbox" id="LIGHT" class="largerCheck" disabled> <span style="font-weight:bold;">&nbspNighttime Light</span></h5>
-  <br style="line-height:15px;">
-  <p>Source Fraction and Greenspace coming soon!</p> 
-  <h5><input type="checkbox" id="SOURCE" class="largerCheck" disabled> <span style="font-weight:bold;">&nbspFine Particulate Matter (PM<sub>2.5</sub>) &nbsp&nbsp&nbsp&nbsp&nbsp&nbspSource Fraction</span></h5>
-  <h5><input type="checkbox" id="GREEN" class="largerCheck" disabled> <span style="font-weight:bold;">&nbspGreenspace</span></h5>
+  <p style="font-size:20px;"><input type="radio" id="PMTFV" class="largerCheck"> <span style="font-weight:bold;">Fine Particulate Matter (PM<sub>2.5</sub>) (&mu;g/m<sup>3</sup>)</span></p>
+  <p style="font-size:20px;"><input type="radio" id="NOTWO" class="largerCheck"> <span style="font-weight:bold;">Nitrogen Dioxide (NO<sub>2</sub>) (ppb)</span></p>
+  <p style="font-size:20px;"><input type="radio" id="OZONE" class="largerCheck"> <span style="font-weight:bold;">Ozone (O<sub>3</sub>) (ppb)</span></p>
+  <p style="font-size:20px;"><input type="radio" id="BLUES" class="largerCheck"> <span style="font-weight:bold;">Blue Space</span></p>
+  <p style="font-size:14px;">Coming soon:</p> 
+  <p style="font-size:20px;"><input type="radio" id="SOURCE" class="largerCheck" disabled> <span style="font-weight:bold;">Fine Particulate Matter (PM<sub>2.5</sub>) Source <span style="padding-left:28px;">Fraction (&mu;g/m<sup>3</sup>)</span></span></p>
+  <p style="font-size:20px;"><input type="radio" id="LIGHT" class="largerCheck" disabled> <span style="font-weight:bold;">Nighttime Light (nW/cm<sup>2</sup>/sr)</span></p>
+  <p style="font-size:20px;"><input type="radio" id="GREEN" class="largerCheck" disabled> <span style="font-weight:bold;">Green Space</span></p>
  </div>`,
 };
+
 
 const slides = [storySlide, filterslide];
 

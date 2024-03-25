@@ -4,15 +4,15 @@ dataT, showmeHistogram, addHistInput, checkies, showdown */
 let dlist;
 /* === MY DATA ON GITHUB === */
 const mapvars = {
-  PMTFV: "https://raw.githubusercontent.com/aidanpcole/EXPOSOME_IRELAND_UK/main/data/DataForMap/UK_IRELAND_simple.geojson",
-  OZONE: "https://raw.githubusercontent.com/aidanpcole/EXPOSOME_IRELAND_UK/main/data/DataForMap/UK_IRELAND_simple.geojson",
-  NOTWO: "https://raw.githubusercontent.com/aidanpcole/EXPOSOME_IRELAND_UK/main/data/DataForMap/UK_IRELAND_simple.geojson",
-  LIGHT: "https://raw.githubusercontent.com/aidanpcole/EXPOSOME_IRELAND_UK/main/data/DataForMap/UK_IRELAND_simple.geojson",
-  SOURCE: "https://raw.githubusercontent.com/aidanpcole/EXPOSOMEDASHBOARD/main/data/DataForMap/pm25_quants.geojson"
+  PMTFV: "https://raw.githubusercontent.com/aidanpcole/EXPOSOME_US/main/data/DataForMap/just_us.geojson",
+  OZONE: "https://raw.githubusercontent.com/aidanpcole/EXPOSOME_US/main/data/DataForMap/just_us.geojson",
+  NOTWO: "https://raw.githubusercontent.com/aidanpcole/EXPOSOME_US/main/data/DataForMap/just_us.geojson",
+  LIGHT: "https://raw.githubusercontent.com/aidanpcole/EXPOSOME_US/main/data/DataForMap/just_us.geojson",
+  BLUES: "https://raw.githubusercontent.com/aidanpcole/EXPOSOME_US/main/data/DataForMap/just_us.geojson"
 };
 
 //const pointLayers = ["coolingCenters", "emergencyP", "pools", "parks", "hosp"]; // i think this needs to be a dictionary
-const polygonLayers = ["PMTFV","OZONE","NOTWO","LIGHT","SOURCE"]; // with string name and var
+const polygonLayers = ["PMTFV","OZONE","NOTWO","LIGHT","BLUES"]; // with string name and var
 
 
 
@@ -89,7 +89,7 @@ const stylevars = {
   OZONE: style,
   NOTWO: style,
   LIGHT: style,
-  SOURCE: style,
+  BLUES: style,
 };
 
 const bindingsvars = {
@@ -97,7 +97,7 @@ const bindingsvars = {
   OZONE: onEachFeatureOZONE,
   NOTWO: onEachFeatureNOTWO,
   LIGHT: onEachFeatureLIGHT,
-  SOURCE: onEachFeaturePMTFV,
+  BLUES: onEachFeaturePMTFV,
 };
 
 
@@ -238,44 +238,16 @@ function PMTFVCheck() {
     uncheck(checkies[1]);
     uncheck(checkies[2]);
     uncheck(checkies[3]);
-    uncheck(checkies[4]);
     disable(checkies[1]);
     disable(checkies[2]);
     disable(checkies[3]);
-    disable(checkies[4]);
-  	document.querySelector('#OZONE').onclick = (e) => {
-  		return true;
-  	}
   	document.querySelector('#NOTWO').onclick = (e) => {
   		return true;
   	}
-  	document.querySelector('#LIGHT').onclick = (e) => {
-  		return true;
-  	}
-  }
-  // onCheck();
-}
-
-function OZONECheck() {
-  if (checkies[1].checked) {
   	document.querySelector('#OZONE').onclick = (e) => {
-  		e.preventDefault();
-  	}
-    uncheck(checkies[0]);
-    uncheck(checkies[2]);
-    uncheck(checkies[3]);
-    uncheck(checkies[4]);
-    disable(checkies[0]);
-    disable(checkies[2]);
-    disable(checkies[3]);
-    disable(checkies[4]);
-  	document.querySelector('#PMTFV').onclick = (e) => {
   		return true;
   	}
-  	document.querySelector('#NOTWO').onclick = (e) => {
-  		return true;
-  	}
-  	document.querySelector('#LIGHT').onclick = (e) => {
+  	document.querySelector('#BLUES').onclick = (e) => {
   		return true;
   	}
   }
@@ -283,87 +255,77 @@ function OZONECheck() {
 }
 
 function NOTWOCheck() {
+  if (checkies[1].checked) {
+  	document.querySelector('#NOTWO').onclick = (e) => {
+  		e.preventDefault();
+  	}
+    uncheck(checkies[0]);
+    uncheck(checkies[2]);
+    uncheck(checkies[3]);
+    disable(checkies[0]);
+    disable(checkies[2]);
+    disable(checkies[3]);
+  	document.querySelector('#PMTFV').onclick = (e) => {
+  		return true;
+  	}
+  	document.querySelector('#OZONE').onclick = (e) => {
+  		return true;
+  	}
+  	document.querySelector('#BLUES').onclick = (e) => {
+  		return true;
+  	}
+  }
+  // onCheck();
+}
+
+function OZONECheck() {
   if (checkies[2].checked) {
-  	document.querySelector('#NOTWO').onclick = (e) => {
+  	document.querySelector('#OZONE').onclick = (e) => {
   		e.preventDefault();
   	}
     uncheck(checkies[0]);
     uncheck(checkies[1]);
     uncheck(checkies[3]);
-    uncheck(checkies[4]);
     disable(checkies[0]);
     disable(checkies[1]);
     disable(checkies[3]);
-    disable(checkies[4]);
   	document.querySelector('#PMTFV').onclick = (e) => {
   		return true;
   	}
-  	document.querySelector('#OZONE').onclick = (e) => {
+  	document.querySelector('#NOTWO').onclick = (e) => {
   		return true;
   	}
-  	document.querySelector('#LIGHT').onclick = (e) => {
+  	document.querySelector('#BLUES').onclick = (e) => {
   		return true;
   	}
   }
   // onCheck();
 }
 
-function LIGHTCheck() {
+function BLUESCheck() {
   if (checkies[3].checked) {
-  	document.querySelector('#LIGHT').onclick = (e) => {
+  	document.querySelector('#BLUES').onclick = (e) => {
   		e.preventDefault();
   	}
     uncheck(checkies[0]);
     uncheck(checkies[1]);
     uncheck(checkies[2]);
-    uncheck(checkies[4]);
     disable(checkies[0]);
     disable(checkies[1]);
     disable(checkies[2]);
-    disable(checkies[4]);
   	document.querySelector('#PMTFV').onclick = (e) => {
   		return true;
   	}
-  	document.querySelector('#OZONE').onclick = (e) => {
+  	document.querySelector('#NOTWO').onclick = (e) => {
   		return true;
   	}
-  	document.querySelector('#NOTWO').onclick = (e) => {
+  	document.querySelector('#OZONE').onclick = (e) => {
   		return true;
   	}
   }
   // onCheck();
 }
 
-function SOURCECheck() {
-  if (checkies[4].checked) {
-  	document.querySelector('#SOURCE').onclick = (e) => {
-  		e.preventDefault();
-  		e.stopPropagation
-  		return false;
-  	}
-    uncheck(checkies[0]);
-    uncheck(checkies[1]);
-    uncheck(checkies[2]);
-    uncheck(checkies[3]);
-    disable(checkies[0]);
-    disable(checkies[1]);
-    disable(checkies[2]);
-    disable(checkies[3]);
-  	document.querySelector('#PMTFV').onclick = (e) => {
-  		return true;
-  	}
-  	document.querySelector('#OZONE').onclick = (e) => {
-  		return true;
-  	}
-  	document.querySelector('#NOTWO').onclick = (e) => {
-  		return true;
-  	}
-  	document.querySelector('#LIGHT').onclick = (e) => {
-  		return true;
-  	}
-  }
-  // onCheck();
-}
 
 
 

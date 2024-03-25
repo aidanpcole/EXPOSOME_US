@@ -62,9 +62,9 @@ const sidebarContentController = function (slide) {
       checkies[4]];
 
     checkies[0].addEventListener("change", PMTFVCheck);
-    checkies[1].addEventListener("change", OZONECheck);
-    checkies[2].addEventListener("change", NOTWOCheck);
-    checkies[3].addEventListener("change", LIGHTCheck);
+    checkies[1].addEventListener("change", NOTWOCheck);
+    checkies[2].addEventListener("change", OZONECheck);
+    checkies[3].addEventListener("change", BLUESCheck);
 /*  checkies[4].addEventListener("change", SOURCECheck); */
     console.log("before check");
     allButResources.forEach(abr => abr.addEventListener("change", onCheck));
@@ -109,3 +109,4 @@ layerGroup, onCheck,
 TWTENCheck, TWELECheck, TWTWECheck, TWTHICheck, TWFOUCheck,
 TWFIFCheck, TWSIXCheck, TWSEVCheck, TWEIGCheck, TWNINCheck, slides,
 openItemArrow, showdown */
+
